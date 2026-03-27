@@ -1,0 +1,7 @@
+This project was built with a staged design rationale to reduce risk and keep delivery predictable. 
+
+First, we decomposed the problem into clear phases: data model and state, API integration, routing and page scaffolding, then interaction and scoring. This step-by-step breakdown made dependencies explicit, prevented scope confusion, and allowed each milestone to be validated before moving forward.
+
+Second, we intentionally followed a front-end/back-end separation mindset, even in a client-focused application. We implemented the API service layer first, including decoding, response-code handling, token management, and data adaptation. By stabilizing this backend-like integration boundary early, the UI layer could rely on clean, typed domain objects instead of raw external payloads. As a result, UI development became faster and less error-prone, because rendering logic and network concerns stayed decoupled.
+
+Third, we prioritized a functional end-to-end baseline before refinement. We shipped the essential flow-import/create quiz, play, submit, and review-then iteratively improved gaps such as resume sessions, result history, filtering, and replay navigation. This incremental strategy ensured continuous usability while leaving room to absorb new requirements without rewriting core architecture. In short, we optimized for progressive completeness, maintainability, and delivery confidence. It also improved team communication, simplified debugging, and kept future extensions technically manageable overall.
